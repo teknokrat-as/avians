@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %} Avians - {{ dir_name }} {% endblock %}
+{% block container %}
+       <table>
+            <th><td>Image</td><td>Operations</td></th>
+            {% for img in images %}
+            <tr><td>
+                <a href="/image/{{library_dir}}/{{img.key}}/">
+                <img src="/thumbnail/{{library_dir}}/{{img.key}}/" />
+                {{ img['key'] }}
+                </a></td>
+                <td>
+                    <a href="/image/{{library_dir}}/{{img.key}}/"> [ Open ] </a>
+                    <a href="/labelmap/{{library_dir}}/{{img.key}}/"> [ Labelmap ] </a>
+                    <a href="/text_detect/{{library_dir}}/{{img.key}}/"> [ Detect Text ] </a>
+                    <a href="/ocr/{{library_dir}}/{{img.key}}/"> [ Avians OCR ] </a>
+                    <a href="/ocr_tesseract/{{library_dir}}/{{img.key}}/"> [ Tesseract OCR ] </a>
+                    <a href="/ocr_abbyy/{{library_dir}}/{{img.key}}/"> [ ABBYY OCR ] </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+{% endblock %}

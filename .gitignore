@@ -1,0 +1,13 @@
+*.pyc
+/doc/ipython_notebooks/.ipynb_checkpoints/Untitled-checkpoint.ipynb
+/doc/ipython_notebooks/Untitled.ipynb
+.idea
+/image_ocr/*
+**/build/*
+*/build/*
+/lib/image_ocr/
+
+/GPATH
+/GRTAGS
+/GSYMS
+/GTAGS

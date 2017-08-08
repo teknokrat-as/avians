@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %} Avians - Home {% endblock %}
+{% block container %}
+       <table>
+            <th><td>Dir</td><td>Operations</td></th>
+            {% for dir in dirs %}
+            <tr><td>
+                <a href="/image_list/{{dir}}/">
+                {{ dir }}
+                </a></td>
+                <td>
+                    <a href="/image_list/{{dir}}/"> [ Open ] </a>
+                    <a href="/upload/{{dir}}/"> [ Upload ] </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+{% endblock %}

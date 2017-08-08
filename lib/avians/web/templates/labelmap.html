@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block title %} Avians - {{ image_key }} {% endblock %}
+{% block container %}
+<form action="/save_labelmap/{{library_dir}}/{{image_key}}/" method="post">
+       <table>
+            <th><td>Whole</td>
+                <td>Component</td>
+                <td>Labels</td>
+                <td>Stats</td>
+            </th>
+            {% for el in elements %}
+            <tr>
+		<td>
+                	<img src="/static/{{el.cimg_path}}" />
+                </td>
+                <td>
+                	<img src="/static/{{el.wimg_path}}" width="50%" />
+                </td>
+                <td>
+                	{% for l in el.l %}
+                	{{ l }} 
+                	{% endfor %}
+			<br>
+			<input type="hidden" name="ex-{{ loop.index }}" value="{{ el.l[0] }}">
+			<input type="text" name="{{ loop.index }}" value="{{ el.l[0] }}">
+                </td>
+                <td> 
+			x: {{ el.x }}
+                     	y: {{ el.y }}
+                     	h: {{ el.h }}
+                     	w: {{ el.w }}
+                     	area: {{ el.area }}
+                     	cx: {{ el.cx }}
+                     	cy: {{ el.cy }}
+                </td>
+            </tr>
+            {% endfor %}
+            <tr>
+                <td>
+			<input style="background-color: #4CAF50; color: #FFFFFF;" type="submit" value="Save">
+                </td>
+            </tr>
+        </table>	
+</form>
+{% endblock %}

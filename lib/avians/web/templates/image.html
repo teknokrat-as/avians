@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %} Avians - {{ dir_name }} {% endblock %}
+{% block container %}
+       <table>
+            <th><td>Image</td><td>Operations</td></th>
+            <tr>
+                <td>
+                <img src="/original/{{library_dir}}/{{image_key}}/" />
+                </td>
+            </tr>
+        </table>
+{% endblock %}
